@@ -4,7 +4,7 @@ import requests
 import snowflake.connector
 from urllib.error import URLError
 
-streamlit.title('My first streamlit app')
+streamlit.title('View Our Fruit List - Add Your Favorites!')
 
 streamlit.header('Breakfast Favorites')
 streamlit.text('🥣Omega 3 & Blueberry Oatmeal')
@@ -57,7 +57,6 @@ if streamlit.button('Get Fruit Load List'):
   my_cnx.close()
   streamlit.dataframe(my_data_row)
 
-streamlit.stop()
 # Allow the end user to add a fruit to the list
 def insert_row_snowflake(new_fruit):
   with my_cnx.cursor() as my_cur:
